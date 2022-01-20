@@ -1,8 +1,5 @@
 
-// hw4 coding by wendy 
 
-console.dir(window.document);
-window.document.querySelector("button");
 
 //Grab all the DIV elementd getElementby ID 
 var divQuizEL = document.getElementById("QuizInfo"); 
@@ -14,7 +11,9 @@ var startBtn = document.getElementById("startQuiz");
 var quizQuestionList = [
   {
     question: "Question 1", 
-
+    question: "Question 2", 
+    question: "Question 3", 
+    question: "Question 4", 
   }
 ]
 //Hide all Elements on page load 
@@ -31,7 +30,6 @@ function startQuiz(){
   divQAEL.style.display = "block";
   //starting the clock 
   startTime()
-
 }
 
 function startTime(){
@@ -39,12 +37,15 @@ function startTime(){
 }
 
 function checkAnswer(){
-  console.log("start clock")
-}
+  console.log("answer")
+  // by Wendy:
+  divQAEL.style.display = "none";
+  divScoreCard.style.display = "block";
+  }
 
 function endQuiz(){
-  console.log("start clock")
+  console.log("end quiz")
 }
-
   
 startBtn.addEventListener("click", startQuiz); 
+divScoreCard.addEventListener("click", divScoreCard); 
