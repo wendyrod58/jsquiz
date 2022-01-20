@@ -11,6 +11,12 @@ var divScoreCard = document.getElementById("scoreCard");
 var divScoreBoard = document.getElementById("scoreboard");
 var startBtn = document.getElementById("startQuiz");
 
+var quizQuestionList = [
+  {
+    question: "Question 1", 
+
+  }
+]
 //Hide all Elements on page load 
 divQAEL.style.display = 'none'; 
 divScoreCard.style.display = 'none'; 
@@ -23,7 +29,22 @@ function startQuiz(){
   divQuizEL.style.display = 'none'; 
   //and show displayQA div 
   divQAEL.style.display = "block";
+  //starting the clock 
+  startTime()
 
 }
+
+function startTime(){
+  console.log("start clock")
+}
+
+function checkAnswer(){
+  console.log("start clock")
+}
+
+function endQuiz(){
+  console.log("start clock")
+}
+
   
 startBtn.addEventListener("click", startQuiz); 
