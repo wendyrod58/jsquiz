@@ -11,7 +11,7 @@
 
 <body>
   <p>Time Remaining: <span id="clockTime">100</span></p>
-  <div class="wrapper" id="QuizInfo">
+    <div class="wrapper" id="QuizInfo">
     <header>
       <h1>Coding Quiz Challenge</h1>
     </header>
@@ -30,28 +30,29 @@
   </div>
   <div class="card-body" id="displayQA">
     <h3 id="question"> Commonly used data types DO not include:</h3>
-    <button id="answer1" class="btn">strings</button>
-    <button id="answer2" class="btn">booleans</button>
-    <button id="answer3" class="btn">alerts</button>
-    <button id="answer4" class="btn">numbers</button>
+    <button id="answer1" class="btn"name="incorrect">strings</button>
+    <button id="answer2" class="btn" name="incorrect">booleans</button>
+    <button id="answer3" class="btn" name="correct">alerts</button>
+    <button id="answer4" class="btn" name="incorrect">numbers</button>
 
     <h3 id="question">The condition if/else statement is enclosed with</h3>
-    <button id="answer5" class="btn">quotes</button>
-    <button id="answer6" class="btn">curly brackets</button>
-    <button id="answer7" class="btn">parenthesis</button>
-    <button id="answer8" class="btn">square brackets</button>
+    <button id="answer5" class="btn" name="incorrect">quotes</button>
+    <button id="answer6" class="btn" name="correct">curly brackets</button>
+    <button id="answer7" class="btn" name="incorrect">parenthesis</button>
+    <button id="answer8" class="btn" name="incorrect">square brackets</button>
 
     <h3 id="question">Arrays in JavaScript can be used to store...</h3>
-    <button id="answer9" class="btn">numbers and strings</button>
-    <button id="answer10" class="btn">other arrays</button>
-    <button id="answer11" class="btn">booleans</button>
-    <button id="answer12" class="btn">all of the above</button>
+    <button id="answer9" class="btn" name="incorrect">numbers and strings</button>
+    <button id="answer10" class="btn" name="incorrect" >other arrays</button>
+    <button id="answer11" class="btn" name="incorrect">booleans</button>
+    <button id="answer12" class="btn" name="correct">all of the above</button>
   </div>
 
   <div id="scoreCard">
     <h2>All done!</h2>
-    <h3>Your final score is xx</h3>
-    <textarea readonly id="password" placeholder="Enter initials" aria-label="Submit"></textarea>
+    <h3>Your final score is <span id="score">XX</span></h3>
+    <textarea  id="initials" placeholder="Enter initials" max="3" aria-label="Submit"></textarea>
+    <button id="submitScore">Submit Score</button>
   </div>
   <div id="scoreboard">
 
