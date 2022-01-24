@@ -12,8 +12,17 @@ var answerBtns = document.getElementsByName("btn3");
 var timeRemaining = 20;
 
 var questionEL = document.getElementById("question");
-//keeps track og the correct answers 
+//keeps track of the correct answers 
 var playerScore = 0;
+
+// var loadTasks = function() {
+//   var HighScores = localStorage.getItem("saveScore");
+//     }
+//   console.log("Saved scores found!");
+//   saveScore = JSON.parse(saveScore);
+
+
+
 
 function decrementTime() {
   timeRemaining--;
@@ -22,31 +31,6 @@ function decrementTime() {
   else { showScorecard() };
 }
 
-// When one answers in Q3 is clicked then the score card will show up 
-// create a for loop to add an event listener to each of the 4 btns in q3
-// for(var i = 0; i < answerBtns.length; i++) {
-//   answerBtns[i].addEventListener("click", showScorecard);
-// }
-
-var quizQuestionList = [
-  //defining an Object 
-  {
-    //left key: right side value 
-    question: "Commonly used data types DO not include:",
-    choices: ["strings", "booleans", "alerts", "numbers"],
-    correctAns: "alerts"
-  },
-  {
-    question: "Question 2",
-    choices: ["AA", "bA", "CA", "DA"],
-    correctAns: "CA"
-  }, {
-    question: "Question 3",
-
-  }, {
-    question: "Question 4",
-  }
-];
 
 //Hide all Elements on page load 
 divQAEL.style.display = 'none';
@@ -75,7 +59,7 @@ function showScorecard() {
   stopTime()
 }
 
-//Decalaring a function called startTime()
+//Declaring a function called startTime()
 function startTime() {
   console.log("start clock")
 }
@@ -89,12 +73,12 @@ function checkAnswer() {
   var answer = this.name;
   if (answer === "correct") {
     playerScore = playerScore + 1;
-    alert("Right ANswer, your score is "+ playerScore);
+    alert("Right Answer, your score is "+ playerScore);
 
   }
   else {
     timeRemaining = timeRemaining - 5;
-    alert("Wrong answer, time dedcuted by 5 sec");
+    alert("Wrong answer, time deducted by 5 sec");
   }
 
   // if (timeRemaining = 0) {
@@ -103,8 +87,6 @@ function checkAnswer() {
 
   //   showScorecard();
   // }
-  // by Wendy:
-  // divQAEL.style.display = "none";
 }
 
 function endQuiz() {
@@ -114,17 +96,15 @@ function endQuiz() {
 function saveScore() {
   console.log("saving ...score into local storage"); 
   var playerName = document.getElementById("initials").value; 
-  //seeting the value in LS 
+  //setting the value in LS 
   localStorage.setItem("score", JSON.stringify(playerName + " - "+ playerScore) );
-
 }
+
+
 
 startBtn.addEventListener("click", startQuiz);
 submitBtn.addEventListener("click", saveScore);
-// answerBtns[0].addEventListener("click", checkAnswer)
-// answerBtns[1].addEventListener("click", checkAnswer)
-// answerBtns[2].addEventListener("click", checkAnswer)
-// answerBtns[3].addEventListener("click", checkAnswer)
+
 
 document.getElementById("answer1").onclick = checkAnswer;
 document.getElementById("answer2").onclick = checkAnswer;
